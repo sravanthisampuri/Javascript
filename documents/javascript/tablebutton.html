@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!-- <div id= "box"></div> -->
+    <table id="box"  border='1|1'>
+        <tr><th>company</th><th>contact</th></tr>
+
+    </table>
+	<input type="text" id="col1data"><button onclick="tablefn()">click</button>
+	<input type="text" id="col2data"><button onclick="tablefn()">click</button>
+	<script>
+
+     var tablearr = [];
+     var table2arr = [];
+        function tablefn() {
+            var newrow = document.getElementById('col1data').value;
+            tablearr.push(newrow);
+            console.log(tablearr);
+
+            var newrow2 = document.getElementById('col2data').value;
+            table2arr.push(newrow2);
+            console.log(table2arr);
+            
+            document.getElementById('col1data').value = "";
+            document.getElementById('col2data').value = "";
+            updatetable();
+
+        }
+
+        function updatetable() {
+            
+
+            var html = "<table   border='1|1'>";
+            html += "<tr><th>company</th><th>contact</th></tr>"
+    for (var i = 0; i < tablearr.length; i++) {
+        html+="<tr>";
+        html+="<td>"+tablearr[i]+"</td>";
+        html+="<td>"+table2arr[i]+"</td>";
+       
+        html+="</tr>";
+
+    }
+    html+="</table>";
+    // for (var i = 0; i < tablearr.length; i++) {
+    //     html+="<tr>";
+    //     if(newrow){
+    //     html+="<td>"+tablearr[i]+"</td>";
+    //     }
+    //     if(newrow2){
+    //     html+="<td>"+table2arr[i]+"</td>";
+    //     }
+       
+    //     html+="</tr>";
+
+    // }
+    // html+="</table>";
+
+document.getElementById("box").innerHTML = html;
+        }
+
+
+		
+
+
+	</script>
+
+</body>
+</html>

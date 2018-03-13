@@ -1,0 +1,57 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>matrix</title>
+		<style type="text/css"> 
+			body {margin: 30px;} 
+		</style> 
+	</head>
+	<body>
+
+		<table id="myTable" border="1"> 
+		</table><form> 
+			<input type="text" id="text1">
+			<input type="text" id="text2">
+
+		<input type="button" onclick="createTable()" value="Create the table"> 
+		
+		<button onclick="tablefn()">click</button>
+		
+
+
+		</form>
+	<script>
+			// var m=prompt("enter rows");
+			// var n=prompt("enter columns");
+			
+			// for(var i=1;i<=m;i++){
+				
+			// 	for(var j=1;j<=n;j++){
+					
+			// 		document.write(j+ " ");
+			// 	}document.write("<br>");
+			// }
+	function createTable () {
+	var row = parseInt(prompt('Enter number of rows'), 10),
+	column = parseInt(prompt('Enter number of columns'), 10);
+
+	for(var i = 0; i < row; i++) {
+	var newRow = document.getElementById('myTable').insertRow(-1);
+	 var newrow = document.getElementById('text1').value;
+	for (var j = 0; j < column; j++) 
+	newRow.insertCell(j).innerHTML = 'Row-' + i + ' Column-' + j;
+	// console.log('Row-' + i + ' Column-' + j)
+	
+
+	}
+	}
+	// var tablearr=[];
+	// function tablefn(){
+	// 	     var newrow = document.getElementById('heading').value;
+ //            tablearr.push(newrow);
+ //        }
+		</script>
+	
+
+	</body>
+	</html>

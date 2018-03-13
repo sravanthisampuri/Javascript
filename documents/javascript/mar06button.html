@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add user</title>
+</head>
+
+<body>
+	<input type="text" id="user" required>
+	<!-- <button id="adduser">Click me</button> -->
+	<button onclick="sampleuser()">Click</button>
+	<button onclick="deletelist()">Delete</button>
+
+	<ol id="userlist">
+
+	</ol>
+	<script>
+
+		// document.getElementById('adduser').onclick=function(){
+		// 	var newuser=document.getElementById('user').value;
+		// 	if(newuser){
+		// 		document.getElementById('userlist').innerHTML  +="<li>"+ newuser+"</li>";
+
+		// 	}else{
+		// 		alert("please enter data");
+		// 	}
+		// document.getElementById('user').value="";
+
+		// 	}
+		var newuser = [];
+		function sampleuser() {
+			var newuser1 = document.getElementById('user').value;
+			if (newuser1) {
+				document.getElementById('userlist').innerHTML += "<li>" + newuser + "</li>";
+				newuser.push(newuser1);
+				document.getElementById('user').value = "";
+				updateview();
+
+			} else {
+				alert("please enter data");
+			}
+			
+		}
+		function updateview() {
+			document.getElementById('userlist').innerHTML = "";
+
+			for (i = 0; i < newuser.length; i++) {
+
+				
+					document.getElementById('userlist').innerHTML += "<li>" + newuser[i] + "  <button onclick='deletelist(" + i + ")'>Remove</button></li>";
+				
+
+
+			}
+
+		}
+		function deletelist(index) {
+			/*var newuser1 = document.getElementById('user').value;
+			newuser.pop(newuser1);
+			updateview()*/
+			newuser.splice(index, 1);
+			updateview();
+		}
+
+	</script>
+
+</body>
+
+</html>

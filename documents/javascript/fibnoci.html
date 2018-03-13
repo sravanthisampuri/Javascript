@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fib series</title>
+</head>
+<body>
+<script>
+	// var n=prompt("enter number");
+	// var x=0;y=1;
+	// document.write(x + "<br>" +y+ "<br>");
+		
+	// for(i=2;i<=n;i++){
+	// 	var z= x+y;
+	// 	document.write(z + "<br>");
+	// 	x=y;
+	// 	y=z;
+	// }
+var n=prompt("enter any number");
+       
+       for(var i=2;i<n;i++)
+       {	
+       	console.log(i,"value of i")
+       	for(var j=2;j<=i;j++){
+       		console.log(j,"value of j")
+       		 if(i==j){
+       		 	console.log(i);
+       		 }else if(i%j==0){
+       		 	break;
+       		 }     
+                	
+       }
+   }
+</script>
+</body>
+</html>
+

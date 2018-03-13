@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Merge array </title>
+</head>
+
+<body>
+    <script>
+        var array1 = [10, 45, 44, 67];
+        var array2 = [33, 56, 34, 66, 90];
+
+
+        for (i = 0; i < array2.length; i++) {
+            array1.push(array2[i]);
+        }
+        console.log(array1);
+var copy =array1.slice();
+console.log(copy);
+ 
+
+copy.length=10;
+console.log(Object.keys(copy)); 
+console.log(copy.length);
+console.log(copy)
+copy.length=3;
+console.log(Object.keys(copy)); 
+console.log(copy.length);
+console.log(copy)
+
+    </script>
+
+</body>
+
+</html>

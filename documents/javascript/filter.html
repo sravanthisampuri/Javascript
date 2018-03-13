@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+  </head>
+
+  <body>
+    <script>
+      var  words = [
+            ['Ganesh',99,"ssc",434], 
+            ['Ramesh', 11,"ssc",435],
+            ['Suresh',45,"ssc",436], 
+            ['Vineeth', 5,"ssc",437],
+            ['Vipin', 55,"ssc",438],
+            ['Praveen', 100,"ssc",439],
+            ['Abhinesh',48,"ssc",440],
+            ['Sravanthi', 66,"ssc",439]
+        ];
+   
+    var found,rollNum;
+//     var status = prompt("Enter Status");
+//    var finalResult =  words.filter(function (student){
+//         if(status=='passed'){
+        
+//            return student[1] >35
+//         }else if (status == 'failed'){
+//             return student[1] < 35
+//         }
+//     })
+//     console.log(finalResult);
+    words.forEach(function (val){
+        if(val[3]==rollNum){
+            found  = val;
+            console.log(found);
+        }
+    }) 
+    </script>
+  </body>
+
+</html>

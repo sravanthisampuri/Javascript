@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>matrix</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="myTable" border="1">
+    </table>
+    <form>
+        <input type="text" id="text1">
+        <input type="text" id="text2">
+
+        <input type="button" onclick="createTable()" value="Create the table">
+
+        <button onclick="tablefn()">click</button>
+
+
+
+    </form>
+    <script>
+
+        function createTable() {
+            var row = parseInt(prompt('Enter number of rows'), 10),
+                column = parseInt(prompt('Enter number of columns'), 10);
+
+            for (var i = 0; i < row; i++) {
+                var newRow = document.getElementById('myTable').insertRow(-1);
+                var newrow = document.getElementById('text1').value;
+                for (var j = 0; j < column; j++)
+                    newRow.insertCell(j).innerHTML = 'Row-' + i + ' Column-' + j;
+                // console.log('Row-' + i + ' Column-' + j)
+
+
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

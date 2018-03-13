@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+//  var product;
+//             var qty,price,table,row,cell1,cell2,cell3;
+           
+
+        function updateForm() {
+             product = document.getElementById("product").value;
+             qty = document.getElementById("quantity").value;
+             price = document.getElementById("price").value;
+             table = document.getElementById("results").getElementsByTagName('tbody')[0];
+             row = table.insertRow(-1);
+             console.log(row)
+             cell1 = row.insertCell(0);
+             console.log(cell1)
+             cell2 = row.insertCell(1);
+             console.log(cell2)
+             cell3 = row.insertCell(2);
+             console.log(cell3)
+            cell1.innerHTML = product;
+            cell2.innerHTML = qty;
+            cell3.innerHTML = price;
+            document.getElementById('product').value = "";
+            document.getElementById('quantity').value = "";
+            document.getElementById('price').value = "";
+            // Add Button cell.
+            cell = row.insertCell(-1);
+            var btnRemove = document.createElement("INPUT");
+            btnRemove.type = "button";
+            btnRemove.value = "Remove";
+            btnRemove.setAttribute("onclick", "Remove(this);");
+            cell.appendChild(btnRemove);
+            
+        }
+        function Remove(r) {
+            console.log(r)
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("results").deleteRow(i);
+        }
+        function Reset(){
+            //console.log(document.getElementById("results").rows);
+            var l=document.getElementById("results").getElementsByTagName('tbody')[0].rows.length;
+            var rows=document.getElementById("results").getElementsByTagName('tbody')[0].rows;
+           console.log(rows);
+            for(var i=0;i<l;i++)
+            {
+                var r = rows[i];
+                console.log(rows[i]);
+                document.getElementById("results").getElementsByTagName('tbody')[0].deleteRow(r);
+
+            }
+            //document.getElementById("results").deleteRow(row);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="product">Product:</label>
+                </td>
+                <td>
+                    <input id="product" />
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>
+                    <label for="quantity">Quantity:</label>
+                </td>
+                <td>
+                    <input id="quantity" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="price">Price:</label>
+                </td>
+                <td>
+                    <input id="price" />
+                </td>
+            </tr>
+        </table>
+        <button type="button" onClick="Reset();" />Reset</button>
+        <button type="button" onClick="updateForm();" />Add To Table</button>
+    </form>
+    <br>
+
+    <table id="results" border='1|1'>
+        <thead>
+            <tr>
+                <th>Products</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+</body>
+
+</html>

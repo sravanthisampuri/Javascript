@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>triangle</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var n=prompt("enter range");
+		var x,y,z,i,j;
+		for(i=1;i<=n;i++){
+			// console.log(i,"i value")
+			for(j=1;j<=n-i;j++){
+				// console.log(j,"j value")
+					  document.write("\xa0");
+					
+			}	
+			for(x=1;x<=i;x++){
+				// console.log(x,"x value")
+				document.write(x);
+				 // document.write(" \xa0 ");
+			}
+			for(y=i-1;y>=1;y--){
+				// console.log(y,"y value")
+				document.write(y);
+				 // document.write(" \xa0 ");
+			}document.write("<br>")
+		}
+
+	</script>
+
+</body>
+</html>

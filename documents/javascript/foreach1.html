@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>forEach</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = [
+            ['name1', 1, 'location1'],
+            ['name2', 2, 'location2'],
+            ['name3', 3, 'location3'],
+            ['name4', 4, 'location4'],
+            ['name5', 5, 'location5'],
+            ['name6', 6, 'location6']
+        ];
+        var id = [];
+        id = arr.forEach(function (val,index) {
+            console.log(index)
+            id.push(val[index]);
+            console.log(id)
+        });
+
+    </script>
+
+</body>
+
+</html>

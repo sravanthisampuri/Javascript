@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="col1data">
+    <button onclick="tablefn()">click</button>
+    <input type="text" id="col2data">
+    <button onclick="tablefn1()">click</button>
+<div >
+    <table >
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <!-- <td id="td2"></td>  -->
+
+        </tr>
+        <!-- <tr id="newvalue">
+            <td id="td1"></td>
+            <td id="td2"></td>
+        </tr> -->
+    </table>
+</div>
+    <script>
+        var tablearr = [];
+        function tablefn() {
+            var newrow = document.getElementById('col1data').value;
+            tablearr.push(newrow);
+            console.log(tablearr);
+            // var c = tablearr.length;
+        
+
+            // document.getElementById("td1").innerHTML = "<td>" + tablearr+ "</td>";
+            document.getElementById('col1data').value = "";
+            updatetable();
+
+        }
+        function updatetable() {
+             document.getElementById('abc').innerHTML = ""; 
+            for (i = 0; i < tablearr.length; i++) {
+                document.getElementById('abc').innerHTML += "<table><tr><td>"+tablearr[i]+ "</td></tr><table>"  ;
+
+
+            }
+        }
+        var tablearr1 = [];
+        function tablefn1() {
+            var newrow = document.getElementById('col2data').value;
+            tablearr1.push(newrow);
+            console.log(tablearr1);
+            // var c = tablearr.length;
+        
+
+            // document.getElementById("td1").innerHTML = "<td>" + tablearr+ "</td>";
+            document.getElementById('col2data').value = "";
+            updatetable1();
+
+        }
+        function updatetable1() {
+             document.getElementById('abc').innerHTML = ""; 
+            for (i = 0; i < tablearr1.length; i++) {
+                document.getElementById('abc').innerHTML += "<table><tr><td>"+tablearr1[i]+ "</td></tr></table>"  ;
+
+
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
