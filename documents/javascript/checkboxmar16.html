@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <p>Categories:</p>
+    <label for="checkbox1">Men:</label>
+    <input type="checkbox" id="checkbox1" onchange="myFunction('checkbox1')">
+    <label for="checkbox2">Women:</label>
+    <input type="checkbox" id="checkbox2" onchange="myFunction('checkbox2')">
+    <label for="checkbox3">Children:</label>
+    <input type="checkbox" id="checkbox3" onchange="myFunction('checkbox3')">
+    <ul id="list"></ul>
+</head>
+
+<body>
+    <script>
+
+
+        Men = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        Women = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        Children = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+
+        function Menfn() {
+
+            for (i = 0; i < Men.length; i++)
+                document.getElementById("list").innerHTML += "<li>" + Men[i] + "</li>";
+        }
+        function Womenfn() {
+
+            for (i = 0; i < Women.length; i++)
+                document.getElementById("list").innerHTML += "<li>" + Women[i] + "</li>";
+        }
+        function Childrenfn() {
+
+            for (i = 0; i < Children.length; i++)
+                document.getElementById("list").innerHTML += "<li>" + Children[i] + "</li>";
+        }
+
+        checkedFields = [];
+        var elements = document.getElementsByTagName("label");
+        function myFunction(id) {
+            var chkbox = document.getElementById(id).checked;
+            console.log(chkbox);
+            for (var k = 0; k < elements.length; k++) {
+                if (elements[k].htmlFor == id) {
+                    var y = elements[k].innerText.split(':')[0];
+                    if (y == "Men" && chkbox) {
+                        checkedFields.push(y);
+                        Menfn();
+                    } else if (y == "Men" && !chkbox) {
+                        document.getElementById("list").innerHTML = '';
+                        var index = checkedFields.indexOf("Men");
+                        checkedFields.splice(index, 1);
+                        overRide(checkedFields);
+                    } else if (y == "Women" && chkbox) {
+                        checkedFields.push(y);
+                        Womenfn();
+                    } else if (y == "Women" && !chkbox) {
+                        document.getElementById("list").innerHTML = '';
+                        var index = checkedFields.indexOf("Women");
+                        checkedFields.splice(index, 1);
+                        overRide(checkedFields);
+                    } else if (y == "Children" && chkbox) {
+                        checkedFields.push(y);
+                        Childrenfn();
+
+                    } else if (y == "Children" && !chkbox) {
+                        document.getElementById("list").innerHTML = '';
+                        var index = checkedFields.indexOf("Children");
+                        checkedFields.splice(index, 1);
+                        overRide(checkedFields);
+                    } else {
+                        Menfn();
+                        Womenfn();
+                        Childrenfn();
+                    }
+                }
+            }
+        }
+        function overRide(checkedCategories) {
+            checkedCategories.forEach(function (x) {
+                if (x == 'Men') {
+                    Menfn();
+                }
+                if (x == 'Women') {
+                    Womenfn();
+                }
+                if (x == 'Children') {
+                    Childrenfn();
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

@@ -12,19 +12,31 @@
     <script>
 
         var arr = [
-            ['name1', 1, 'location1'],
-            ['name2', 2, 'location2'],
-            ['name3', 3, 'location3'],
-            ['name4', 4, 'location4'],
-            ['name5', 5, 'location5'],
-            ['name6', 6, 'location6']
+            ['name1', 1, 'location1','dfhgd'],
+            ['name2', 2, 'location2','sbfjsfbja'],
+            ['name3', 3, 'location3','gdfuvdj'],
+            ['name4', 4, 'location4','gdfjdg'],
+            ['name5', 5, 'location5','hgsydfs'],
+            ['name6', 6, 'location6','hsdgvfhsfv']
         ];
-        var id = [];
-        id = arr.forEach(function (val,index) {
-            console.log(index)
-            id.push(val[index]);
-            console.log(id)
-        });
+        // var id = [];
+        // id = arr.forEach(function (val,index) {
+        //     console.log(index)
+        //     id.push(val[index]);
+        //     console.log(id)
+        // });
+names=[];
+
+
+arr[0].forEach(function(val,y){
+    names[y]=[];
+    console.log(names[y])
+})
+arr.forEach(function(val,y){
+    arr[y].forEach(function(value,index){
+        names[index].push(value);
+    })
+})
 
     </script>
 

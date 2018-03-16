@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String search</title>
+    <input tpe="text" id="searchtext">
+    <button onclick="myfunction()">search</button>
+    <button onclick="fillDefault()">Reset</button>
+    <ul id="list">
+
+    </ul>
+    <ol id="orderedlist">
+
+    </ol>
+</head>
+
+<body>
+    <script>
+        var input = ["Very often when you write code, you want to perform different actions for different decisions",
+            "Use if to specify a block of code to be executed, if a specified condition is true",
+            "Use switch to specify many alternative blocks of code to be executed"]
+        var output = [];
+
+        function fillDefault() {
+            document.getElementById('list').innerHTML = ""
+            document.getElementById("searchtext").value = ""
+            for (var i = 0; i < input.length; i++) {
+                document.getElementById('list').innerHTML += "<li>" + input[i] + "  </li>";
+            }
+        }
+        fillDefault()
+        function myfunction() {
+
+            output = [];
+            var str = document.getElementById("searchtext").value;
+
+            for (i = 0; i < input.length; i++) {
+                if (input[i].includes(str)) {
+                    output.push(input[i]);
+                }
+
+            }
+            if (output.length == 0) {
+                alert("No valid match found");
+            } else {
+                document.getElementById('list').innerHTML = "";
+                for (var j = 0; j < output.length; j++) {
+                    document.getElementById('list').innerHTML += "<li>" + output[j] + "  </li>";
+
+                }
+
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
