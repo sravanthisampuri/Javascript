@@ -5,30 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        div{
+            height:50px;
+            width:50px;
+            display:inline-block;
+            background-color: pink;
+            margin:5px;
+            border:2px solid black;
+        }
+       
+
+    </style>
 </head>
 <body>
-    <ul>
-       <li>1</li>
-       <li>2</li>
-       <li>3</li>
+    <ul >
+       <li id="one">1</li>
+       <li id="two">2</li>
+       <li id="four">4</li>
 
     </ul>
-    <script>
-         function animate(i){
-         myVar=setTimeout(function(){
-            alert(i);
-            if(i==12){
-              clearTimeout(myVar);
-              return;
-            }
-           animate(i+1)
-         },2000)
-    }
 
-    var i=1; //i is the start point 1 to 12 that is
-    animate(i);
-        var elements=document.getElementsByTagName('ul');
-        console.log(elements[0].firstElementChild.parentElement.children)
+    <!-- <button class="before">before-btn</button>
+    <button class="after">after-btn</button>
+    <button class="reset">reset-btn</button>
+
+<section id="new">
+    <div>1</div><div>2</div><div>3</div><div>4</div>
+</section> -->
+
+    <script>
+ 
+        // var elements=document.getElementsByTagName('ul');
+        // console.log(elements[0].firstElementChild.parentElement.children);
+
+// ===================== Create Element,append and prepend====================
+
+    //   var newElement = document.createElement('li');
+
+    //   newElement.innerHTML="3";
+    //   document.getElementById('list').appendChild(newElement);
+    //   document.getElementById('list').prepend(newElement)
+
+
+// ===================== Insertadjacent html====================
+    // var y=document.getElementById('two');
+    // y.insertAdjacentHTML('afterend','<li id="three">3</li>');
+    // y.insertAdjacentHTML('beforeend','<li id="three">3</li>')
+    // y.insertAdjacentHTML('beforebegin','<li id="three">3</li>')
+    // y.insertAdjacentHTML('afterbegin','<li id="three">3</li>')
+        
+// ===================== Insertadjacent element====================
+
+var parent1=document.getElementsByTagName('ul')[0].children;
+console.log(parent1)
+
+var x='stg'
+if(x instanceof Object){
+    alert('!wow');
+}else{
+    alert('not a string')
+}
     </script>
 </body>
 </html>

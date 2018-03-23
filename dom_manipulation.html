@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dom Training</title>
+    <title>Dom</title>
 
 </head>
 
@@ -13,6 +13,7 @@
 
     <button onclick="listcolor()">changecolor</button>
     <button onclick="fun1()">click</button>
+    <!-- <button onclick="fun2()">click</button> -->
 
 
     <ul id="ul-list">
@@ -26,28 +27,79 @@
     <script>
 
         var colorApplied = false;
-        function fun1() {
-            var x = document.getElementsByClassName('list-item');
-            // if (x.style.display == "none") {
-            //     x.style.display = "block";
-            // } else {
-            //     x.style.display = "none";
-            // }
-
-            for (i = 0; i < x.length; i++) {
-                console.log(x[i])
-                setTimeout(displaylist(x[i]),5000);
-            }
-        }
+        var x = document.getElementsByClassName('list-item');
+         var count = 0  
+         var count1=x.length-1;
+       var interval,interval1;
+       function fun1 (){
+           if(interval){
+               return;
+           }
+        interval =  setInterval(function (){
+            displaylist(x)
+        }, 1000);
+        
+       }
         function displaylist(x) {
-            console.log(x)
-                if (x.style.display == "none") {
-                    x.style.display = "block";
+           if(count==x.length-1){
+               clearInterval(interval);
+               console.log(count)
+              decrement(x);
+           }
+                y = x[count];
+                if (y.style.display == "none") {
+                    y.style.display = "block";
                    
                 } else {
-                    x.style.display = "none"; 
+                    y.style.display = "none"; 
                 }
+                
+                count++;
         }
+       
+
+        function decrement(x){
+            var interval = setInterval(function() {
+                if (--count == 0) {
+                    clearInterval(interval);
+                }
+                y = x[count];
+                // listcolor();
+                console.log(count,x[count])
+                if (y.style.display == "none") {
+                    y.style.display = "block";
+                   
+                } else {
+                    y.style.display = "none"; 
+                }
+               
+            },1000)
+        } 
+    //     function fun2 (){
+    //        if(interval1){
+    //            return;
+    //        }
+    //     interval1 =  setInterval(function (){
+    //         displaylist1(x)
+    //     }, 1000);
+
+    //    }
+    //    function displaylist1(x) {
+    //        if(count1==0){
+    //            clearInterval(interval)
+    //        }
+    //             z = x[count1];
+    //             console.log(z)
+    //             if (z.style.display == "none") {
+    //                 z.style.display = "block";
+                   
+    //             } else {
+    //                 z.style.display = "none"; 
+    //             }
+                
+    //             count1--;
+    //     }
+        
 
         function listcolor() {
             if (colorApplied) {
