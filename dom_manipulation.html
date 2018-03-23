@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Training</title>
+
+</head>
+
+<body>
+
+    <button onclick="listcolor()">changecolor</button>
+    <button onclick="fun1()">click</button>
+
+
+    <ul id="ul-list">
+        <li class="list-item">Get the elements by ID like in CSS</li>
+        <li class="list-item">Get the elements by class like in CSS</li>
+        <li class="list-item">Get the elements by tag name like in CSS</li>
+        <li class="list-item"> what is querySelector?</li>
+        <li class="list-item">what is querySelectorAll?</li>
+    </ul>
+
+    <script>
+
+        var colorApplied = false;
+        function fun1() {
+            var x = document.getElementsByClassName('list-item');
+            // if (x.style.display == "none") {
+            //     x.style.display = "block";
+            // } else {
+            //     x.style.display = "none";
+            // }
+
+            for (i = 0; i < x.length; i++) {
+                console.log(x[i])
+                setTimeout(displaylist(x[i]),5000);
+            }
+        }
+        function displaylist(x) {
+            console.log(x)
+                if (x.style.display == "none") {
+                    x.style.display = "block";
+                   
+                } else {
+                    x.style.display = "none"; 
+                }
+        }
+
+        function listcolor() {
+            if (colorApplied) {
+                reset();
+            }
+            else {
+                var x = document.querySelectorAll('.list-item,.list-item1,#list');
+                for (i = 0; i < x.length; i++) {
+                    if (i % 2 == 0) {
+                        x[i].style.color = "red";
+                    }
+                    else {
+                        x[i].style.color = "blue"
+                    }
+                }
+                colorApplied = true;
+            }
+        }
+        function reset() {
+            var x = document.querySelectorAll('.list-item,.list-item1,#list');
+            console.log(x);
+            for (i = 0; i < x.length; i++) {
+                x[i].style.color = "black";
+            }
+            colorApplied = false;
+        }
+
+    </script>
+</body>
+
+</html>
