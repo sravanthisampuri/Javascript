@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>resize</title>
+    <style>
+        div {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            background-color: pink;
+            margin: 5px;
+            border: 2px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <img src="dom.png" onclick="resize()">
+
+    <script>
+        var x = document.getElementsByTagName('img')
+        function resize() {
+            var x = document.getElementsByTagName('img')
+            console.log(x)
+            var count = 0;
+            if (count) {
+                x[0].style.width = '50px';
+                x[0].style.height = '50px';
+                count = 1;
+            } else {
+                x[0].style.width = '600px';
+                x[0].style.height = '600px';
+                count=0;
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

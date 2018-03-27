@@ -1,0 +1,29 @@
+body{
+    padding:0;
+    margin:0;
+
+}
+p{color:red;font-size:15px;}
+#active {
+    color:rgb(219, 55, 14);
+    
+}
+#active li{
+    margin-bottom:10px;
+    
+}
+/* #active button{
+    color:black;
+} */
+#done{
+    color:green;
+  
+  
+}
+span{
+    color:blue;
+   
+}
+.strike{
+    text-decoration: line-through
+}
