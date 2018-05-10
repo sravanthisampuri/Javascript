@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  1.Rerversenum
+
+        // function reversenumber(num) {
+        //     var output = num.toString().split("").reverse().join("");
+        //     return output;
+        //     console.log(output);
+        // }
+        // console.log(reversenumber(32243));
+        // function reversenum(num) {
+        //     var arr = [];
+        //     var num = num.toString().split("");
+        //     console.log(num)
+        //     for (i = 0; i < num.length; i++) {
+        //         console.log()
+        //         arr += num[num.length - 1 - i];
+
+        //     }
+        //     console.log(arr)
+        // }
+        // reversenum(32243);
+
+        // ===============================================
+        // 2.palindrome
+        // var str, arr = [];
+        // function palindrome(str) {
+        //     // str = str.split("");
+        //     // console.log(str);
+        //     for (i = 0; i < str.length; i++) {
+        //         arr += str[str.length - 1 - i];
+        //     }
+        //     if (str === arr) {
+        //             console.log("entered string is palindrome")
+        //         } else {
+        //             console.log("entered string is not a palindrome")
+        //         }
+
+        // } palindrome(1234)
+        // ================================================
+        // 3.var char, charcd = [], sort = [],temp,temp1="";
+        // function alphabeticalorder(char) {
+
+        //     // var char = char.split('');
+        //     // console.log(char);
+        //     for (i = 0; i < char.length; i++) {
+
+        //         charcd.push(char.charCodeAt(i));
+        //         console.log(charcd)
+
+        //     }
+        //     // for (j = 0; j < charcd.length; j++) {
+        //     //     if (charcd[j] > charcd[j + 1]) {
+        //     //     temp=charcd[j+1];
+        //     //     charcd[j+1]= charcd[j];
+        //     //     charcd[j]=temp;
+        //     //     }
+        //     //     console.log(charcd)   
+        //     // }
+
+        //     for(var i=0;i<char.length;i++){
+        //     var lowest = Math.min(...charcd);
+        //     sort.push(lowest);
+        //     charcd.splice(charcd.indexOf(lowest), 1)
+        //     console.log(sort)
+        // }
+        //     for(i=0;i<sort.length;i++){
+        //         temp1 +=String.fromCharCode(sort[i]);
+        //         console.log(temp1);
+        //     }
+
+        // }
+        // alphabeticalorder('haiasdasf')
+        // =============================================
+        // 4.var res=[]
+        // function firstlettercap(str) {
+        //     console.log(str)
+        //    var arr = str.split(' ');
+
+        //     for(i=0;i<arr.length;i++){
+        //         res.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1))
+
+
+        //     }
+        //     return res.join(' ')
+
+        // }
+
+        // console.log(firstlettercap('dfbhsd sndgsn bsjkdgb'))
+
+        // =========================================
+        // 5.function longestword(str){
+        //     var word = str.split(' ');
+        //     var res=[],count=0,longestword=' ';
+        //     for(i=0;i<word.length;i++){
+        //         if(word[i].length>=longestword.length){
+        //             longestword= word[i];
+
+
+        //         }
+
+        //     }
+        //     console.log(longestword)
+        // }
+        // longestword('Webjknllljhjkhnjhbn Development Tutorial')
+
+        // =================================
+        // 6.
+        // function findvowel(str) {
+        //     var word = str.split('');
+        //     var count=0;
+        //     for (i = 0; i <= str.length; i++) {
+        //         if (word[i] == 'a'||word[i]=='e'|| word[i]=='i' ||word[i]== 'o' ||word[i]== 'u') {
+        //             count++;
+        //         }
+        //     }
+        //     console.log(count)
+
+
+        // }
+        // console.log(findvowel('dfsaasdafs'))
+        // ======================================================
+        // 7.
+
+        // function test_prime(n)
+        // {
+
+        //   if (n===1)
+        //   {
+        //     return false;
+        //   }
+        //   else if(n === 2)
+        //   {
+        //     return true;
+        //   }else
+        //   {
+        //     for(var x = 2; x < n; x++)
+        //     {
+        //       if(n % x === 0)
+        //       {
+        //         return "number is not a prime number";
+        //       }
+        //     }
+        //     return "number is prime number";  
+        //   }
+        // }
+
+        // console.log(test_prime(13));
+        // ==================================
+        // 8.
+
+        // function argument(arg){
+        // var type=typeof(arg);
+        // return type;
+        // }
+        // console.log(argument([1,2,3]))
+        // console.log(argument(1))
+        // console.log(argument('zsdfsdf'))
+        // console.log(argument(true))
+        // console.log(argument(undefined))
+        // console.log(argument(function(){}))
+        // ================================
+        // 9.
+        // function secondlowhigh() {
+        //     var arr = [1, 2, 3, 4,5], temp;
+        //     for (i = 0; i < arr.length; i++) {
+        //         if (arr[i] > arr[i + 1]) {
+        //             temp = arr[i]
+        //             arr[i] = arr[i + 1];
+        //             arr[i+1] = temp;
+        //         }
+        //         var result=[arr[1],arr[arr.length-2]]
+        //     }console.log(result)
+            
+        // }
+        // secondlowhigh()
+        // ==============================================
+        // 10.
+//         var temp=[]
+//         function factors(n){
+// for(i=1;i<=n;i++){
+//     if(n%i===0){
+//         temp.push(i)
+//     }
+// }console.log(temp)
+//         }
+//         factors(25)
+
+// =====================================$
+// 11.
+
+    </script>
+
+
+</body>
+
+</html>
